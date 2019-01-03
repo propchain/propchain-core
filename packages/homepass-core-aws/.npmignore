@@ -1,0 +1,10 @@
+src/
+test/
+tsconfig.json
+.babelrc
+.eslintignore
+.eslintrc.js
+.prettierignore
+.prottierrc
+
+

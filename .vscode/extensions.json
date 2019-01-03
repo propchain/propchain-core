@@ -1,0 +1,18 @@
+{
+  // See http://go.microsoft.com/fwlink/?LinkId=827846
+  // for the documentation about the extensions.json format
+  "recommendations": [
+    // ESLint
+    "dbaeumer.vscode-eslint",
+    // Color Hightlight
+    "naumovs.color-highlight",
+    // Apollo GraphQL
+    "apollographql.vscode-apollo",
+    // Editor tab/spaces
+    "editorconfig.editorconfig",
+    // Path Intellisense
+    "christian-kohler.path-intellisense",
+    // Prettier
+    "esbenp.prettier-vscode"
+  ]
+}
