@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "packages/homepass-core-aws"
+    }
+  ],
+  "settings": {
+    "files.autoSave": "onFocusChange"
+  }
+}
