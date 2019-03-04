@@ -9,7 +9,7 @@
     "lint:types": "tsc --noEmit",
     "test": "jest",
     "test:ci": "jest --reporters ./node_modules/jest-junit",
-    "build": "npm run build:types && npm run build:js",
+    "build": "rimraf lib && npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
     "prepublish": "npm run build"
@@ -45,6 +45,7 @@
     "jest-watch-typeahead": "^0.2.1",
     "lerna": "^3.13.1",
     "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
     "typescript": "~3.3.3333"
   },
   "dependencies": {
@@ -52,7 +53,9 @@
   },
   "jest": {
     "verbose": false,
-    "setupFilesAfterEnv": ["<rootDir>/test/jest.setup.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/jest.setup.js"
+    ],
     "testEnvironment": "node",
     "moduleFileExtensions": [
       "ts",
