@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "/Users/peter/git/homepass2018/homepass-core"
+		},
+		{
+			"path": "homepass-core-aws"
+		}
+	],
+	"settings": {
+		"files.autoSave": "onFocusChange"
+	}
+}

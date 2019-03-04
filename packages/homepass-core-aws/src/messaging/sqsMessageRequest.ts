@@ -1,13 +1,16 @@
 import { mapToMessageAttributes } from './messageAttributes';
 
 /* eslint-disable import/prefer-default-export */
-export class SNSMessageRequest {
+export class SQSMessageRequest {
+  body: any;
+  messageAttributes: any;
+
   /**
    * Defines a message request to send to SQS or SNS
    * @param {Object} body
    * @param {Object} messageAttributes
    */
-  constructor(body, messageAttributes) {
+  constructor(body: any, messageAttributes: any) {
     this.body = body;
     if (messageAttributes) {
       this.messageAttributes = messageAttributes;
@@ -15,19 +18,15 @@ export class SNSMessageRequest {
   }
 
   /**
-   * convert to request object, ready to send/publish to SQS, SNS
+   * convert to request object, ready to send/publish to SQS
    */
   toRequest() {
     let { body } = this;
     if (typeof this.body === 'object' && this.body) {
       body = JSON.stringify(this.body, null, 4);
     }
-    // console.log('Stringified Sns.toRequest.body : ', body);
-    // body = [body.slice(0, 1), '"default": "default message",', body.slice(1)].join('');
-    // console.log('body with default', body);
-    const request = {
-      Message: body,
-      // MessageStructure: 'json',
+    const request: any = {
+      MessageBody: body,
     };
     if (this.messageAttributes) {
       request.MessageAttributes = mapToMessageAttributes(this.messageAttributes);

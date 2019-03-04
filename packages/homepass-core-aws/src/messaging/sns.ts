@@ -2,15 +2,17 @@
 import AWS from 'aws-sdk';
 
 import config from '../awsConfig';
+import { SQSMessageRequest } from './sqsMessageRequest';
 
 class SNS {
+  rawSNS: AWS.SNS;
   /**
    * Send a message to a SNS topic
    * @param {string} topicArn
    * @param {MessageRequest} message
    */
-  publish(topicArn, message) {
-    const params = message.toRequest('sns');
+  publish(topicArn: string, message: SQSMessageRequest) {
+    const params: any = message.toRequest();
     return this.getSNS()
       .publish({
         ...params,

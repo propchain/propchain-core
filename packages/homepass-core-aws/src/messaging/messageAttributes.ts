@@ -1,6 +1,6 @@
-export function mapToMessageAttributes(obj) {
+export function mapToMessageAttributes(obj: any) {
   if (!obj) return {};
-  return Object.keys(obj).reduce((acc, key) => {
+  return Object.keys(obj).reduce((acc: any, key) => {
     if (typeof obj[key] === 'string') {
       acc[key] = {
         DataType: 'String',
@@ -23,11 +23,11 @@ export function mapToMessageAttributes(obj) {
   }, {});
 }
 
-export function mapAttributesToObj(attributes) {
+export function mapAttributesToObj(attributes: any) {
   if (!attributes) {
     return attributes;
   }
-  return Object.keys(attributes).reduce((acc, key) => {
+  return Object.keys(attributes).reduce((acc: any, key) => {
     if (attributes[key].DataType === 'String') {
       acc[key] = attributes[key].StringValue;
     } else if (attributes[key].DataType === 'Number') {

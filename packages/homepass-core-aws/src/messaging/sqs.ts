@@ -2,9 +2,12 @@
 import AWS from 'aws-sdk';
 
 import config from '../awsConfig';
+import { SQSMessageRequest } from './sqsMessageRequest';
 
 class SQS {
-  createQueue(queueName) {
+  awsSQS: AWS.SQS;
+
+  createQueue(queueName: string) {
     const params = {
       QueueName: queueName,
     };
@@ -13,8 +16,8 @@ class SQS {
       .promise();
   }
 
-  send(queueUrl, message) {
-    const params = message.toRequest('sqs');
+  send(queueUrl: string, message: SQSMessageRequest) {
+    const params = message.toRequest();
     return this.getSQS()
       .sendMessage({
         ...params,
