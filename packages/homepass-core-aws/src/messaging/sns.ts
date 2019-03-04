@@ -2,7 +2,7 @@
 import AWS from 'aws-sdk';
 
 import config from '../awsConfig';
-import { SQSMessageRequest } from './sqsMessageRequest';
+import { SNSMessageRequest } from './snsMessageRequest';
 
 class SNS {
   rawSNS: AWS.SNS;
@@ -11,7 +11,7 @@ class SNS {
    * @param {string} topicArn
    * @param {MessageRequest} message
    */
-  publish(topicArn: string, message: SQSMessageRequest) {
+  publish(topicArn: string, message: SNSMessageRequest) {
     const params: any = message.toRequest();
     return this.getSNS()
       .publish({
