@@ -80,6 +80,12 @@ Message footer:
 Closes #123, #245, #992
 ```
 
+## Publish modules
+
+```bash
+$ lerna publish
+```
+
 ## Link modules during development
 
 ```bash
