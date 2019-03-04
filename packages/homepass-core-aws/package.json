@@ -45,7 +45,6 @@
     "jest-watch-typeahead": "^0.2.1",
     "lerna": "^3.13.1",
     "prettier": "^1.16.4",
-    "rimraf": "^2.6.3",
     "typescript": "~3.3.3333"
   },
   "dependencies": {
@@ -72,5 +71,6 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ]
-  }
+  },
+  "gitHead": "ac5e5fee32634826bb19eecc477a9e9afbb5c5cf"
 }
