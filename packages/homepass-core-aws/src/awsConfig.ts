@@ -17,9 +17,6 @@ export default {
   sns: {
     endpoint: isLocal ? 'http://localhost:4575' : undefined,
   },
-  sns2: {
-    endpoint: isLocal ? 'http://localhost:4575' : undefined,
-  },
   dynamoDb: {
     endpoint: isLocal ? 'http://localhost:4569' : undefined,
   },
