@@ -9,7 +9,7 @@
     "lint:types": "tsc --noEmit",
     "test": "jest",
     "test:ci": "jest --reporters ./node_modules/jest-junit",
-    "build": "rimraf lib && npm run build:types && npm run build:js",
+    "build": "rm -rf lib && npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
     "prepublish": "npm run build"
@@ -72,5 +72,5 @@
       "jest-watch-typeahead/testname"
     ]
   },
-  "gitHead": "ac5e5fee32634826bb19eecc477a9e9afbb5c5cf"
+  "gitHead": "3a2e31fa7d25c2170b6d88b6fbadec3d899b8b38"
 }
