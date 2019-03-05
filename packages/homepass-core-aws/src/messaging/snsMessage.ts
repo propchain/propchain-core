@@ -2,15 +2,14 @@ import { mapAttributesToObj } from './messageAttributes';
 
 /* eslint-disable import/prefer-default-export */
 export class SNSMessage {
-  body: any;
+  message: any;
   messageAttributes: any;
   constructor(rawMsg: any) {
-    Object.assign(this, rawMsg);
     try {
-      this.body = JSON.parse(rawMsg.body);
+      this.message = JSON.parse(rawMsg.Sns.Message);
     } catch (err) {
-      this.body = rawMsg.body;
+      this.message = rawMsg.Sns.Message;
     }
-    this.messageAttributes = mapAttributesToObj(rawMsg.messageAttributes) || {};
+    this.messageAttributes = mapAttributesToObj(rawMsg.Sns.MessageAttributes) || {};
   }
 }
