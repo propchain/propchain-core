@@ -1,6 +1,6 @@
 {
   "name": "@homepass2018/aws",
-  "version": "0.8.9",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
